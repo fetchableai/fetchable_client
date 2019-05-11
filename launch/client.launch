@@ -1,0 +1,19 @@
+<launch>
+
+  <!-- declare arg to be passed in -->
+  <arg name="fetchable_auth" default="" doc="defines the path to the fetchable auth file"/>
+
+  <!-- read value of arg -->
+  <param name="fetchable_auth_path" value="$(arg fetchable_auth)"/>
+
+
+  <!-- launch node -->
+  <node
+    name="fetchable_client"
+    pkg="fetchable_client"
+    type="fetchable_client_node.py"
+    respawn="false"
+    output="screen"
+  />
+
+</launch>
