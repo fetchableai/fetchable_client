@@ -16,16 +16,16 @@ Table of Contents
 Description
 ============
 
-The package contains a single node 'fetchable_client' and expose a single service `/fetch`. The service message type is called Fetch and contains a single request and response field.
+The package contains a single node 'fetchable_client' and expose a single service :code:`/fetch`. The service message type is called Fetch and contains a single request and response field.
 
-```
-string endpoint
----
-string response
+.. code-block::
+  string endpoint
+  ---
+  string response
 
-```
 
-The endpoint specifies the exact endpoint you wish to access, e.g. `/status`, `/random/joke`, `/v0.1/amazon_river/length`. The response contains the JSON response from the server (or error message from the Fetchable Python client-side library if it can't access the server) encoded in a string format. It is up to the caller of the service to decode it into a JSON object.
+
+The endpoint specifies the exact endpoint you wish to access, e.g. :code:`/status`, :code:`/random/joke`, :code:`/v0.1/amazon_river/length`. The response contains the JSON response from the server (or error message from the Fetchable Python client-side library if it can't access the server) encoded in a string format. It is up to the caller of the service to decode it into a JSON object.
 
 The package uses the Fetchable Python client-side SDK (found `here
 <https://github.com/fetchableai/fetchable-python>`_) to make the calls under the hood and the reader should familiarise themselves with how this works.
@@ -70,7 +70,7 @@ DESCRIBE THE SERVICE
 1. Through code
 ~~~~~~~~~~~~~~~
 
-The service can be called through code in other nodes. There are plenty of examples of how to do this online but to make things easier we have included an example in python and c++ in the `/tests` folder. They can be run with `rosrun fetchable_client example_caller_py` and `rosrun fetchable_client example_caller_cpp` respectively. Each code will repeatedly prompt the user to enter an endpoint through the terminal until 'quit' is entered.
+The service can be called through code in other nodes. There are plenty of examples of how to do this online but to make things easier we have included an example in python and c++ in the :code:`/tests` folder. They can be run with :code:`rosrun fetchable_client example_caller_py` and :code:`rosrun fetchable_client example_caller_cpp` respectively. Each code will repeatedly prompt the user to enter an endpoint through the terminal until 'quit' is entered.
 
 The most basic version looks like this.
 
