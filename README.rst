@@ -35,7 +35,7 @@ Installation
 
 There are two methods for installing this package: (1) building from source, or (2) installing binary release. Building from source allows you to make modifications to the code yourself and extend it. Installing the binary package doesn't offer you that but lets you start fetching data quicker.
 
-1. Common Step (Pre-requisites)
+1. Pre-requisites (Common Step)
 -------------------------------
 
 * Python 2.7 or 3.4
@@ -69,8 +69,8 @@ b. Get the source code.
   $ sudo apt-get install ros-<distro>-fetchable-client
 
 
-3. Common Step (env. variables)
-----------------------------
+3. Env. variables (Common Step)
+-------------------------------
 
 You will need to provide the path to the file containing your authentication keys. There are two ways to specify the path to your account's authentication file. Firstly, you may set it as an environment variable and the package will automatically read it.
 
@@ -80,7 +80,7 @@ You will need to provide the path to the file containing your authentication key
 
 The second way is to specify it through the launch file when launching like so:
 
-.. code-block:: xml
+.. code-block:: sh
 
   $ roslaunch fetchable_client client.launch fetchable_auth:=/path/to/file.json
 
@@ -89,9 +89,22 @@ The second way is to specify it through the launch file when launching like so:
 Usage
 =====
 
-Running the Node
-----------------
+Launching the Node
+------------------
 
+If you have exported the environment variable you may start the node in either of these ways:
+
+.. code-block:: sh
+
+  $ roslaunch fetchable_client client.launch
+
+  $ rosrun fetchable_client fetchable_client_node.py
+
+If you have not exported the variable, you must specify it through the launch file like so:
+
+.. code-block:: sh
+
+  $ roslaunch fetchable_client client.launch fetchable_auth:=/path/to/file.json
 
 
 
@@ -99,7 +112,6 @@ Calling the service (Command Line)
 ----------------------------------
 
 The service can be called with the following command:
-
 
 .. code-block:: sh
 
