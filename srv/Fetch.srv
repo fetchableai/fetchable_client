@@ -1,3 +1,3 @@
-string endpoint
+string endpoint #the endpoint to access
 ---
-string response
+string response #the response from server or Fetchable python library

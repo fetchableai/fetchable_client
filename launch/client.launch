@@ -1,9 +1,9 @@
 <launch>
 
-  <!-- declare arg to be passed in -->
+  <!-- absolute path to the file containing authentication keys -->
   <arg name="fetchable_auth" default="" doc="defines the path to the fetchable auth file"/>
 
-  <!-- read value of arg -->
+  <!-- make it a parameter -->
   <param name="fetchable_auth_path" value="$(arg fetchable_auth)"/>
 
 
